@@ -13,7 +13,6 @@ import {
   Dimensions,
   TextInput
 } from 'react-native';
-
 let widthOfMargin = Dimensions.get('window').width * 0.05;
 
 export default class LoginLeaf extends Component<Props> {

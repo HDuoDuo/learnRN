@@ -72025,7 +72025,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             style: styles.container,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 62
+              lineNumber: 61
             }
           },
           _react3.default.createElement(_reactNative.TextInput, {
@@ -72036,7 +72036,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 63
+              lineNumber: 62
             }
           }),
           _react3.default.createElement(
@@ -72045,7 +72045,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               style: styles.textPromptStyle,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 66
+                lineNumber: 65
               }
             },
             "\u60A8\u8F93\u5165\u7684\u624B\u673A\u53F7\uFF1A",
@@ -72058,7 +72058,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             onChangeText: this.updatePW,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 69
+              lineNumber: 68
             }
           }),
           _react3.default.createElement(
@@ -72070,7 +72070,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 73
+                lineNumber: 72
               }
             },
             "\u786E\u5B9A"
@@ -72084,7 +72084,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 76
+                lineNumber: 75
               }
             },
             "\u6CE8\u518C"
