@@ -14,8 +14,6 @@ import {Navigator} from 'react-native-deprecated-custom-components';
 import LoginLeadf from './LoginLeaf';
 import WaitingLeaf from './WaitingLeaf';
 import RegisterLeaf from './RegisterLeaf';
-import  ImagesLeaf from './ImagesLeaf';
-
 
 export default class App extends Component<Props> {
   
@@ -41,8 +39,6 @@ export default class App extends Component<Props> {
           userPW={router.userPW} navigator={navigator}/>;
       case "register":
         return <RegisterLeaf navigator={navigator}/>;
-      case "iconChoice":
-        return <ImagesLeaf navigator={navigator}/>;
     }
   }
 

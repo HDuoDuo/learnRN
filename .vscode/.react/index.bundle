@@ -61557,10 +61557,6 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _RegisterLeaf2 = _interopRequireDefault(_RegisterLeaf);
 
-  var _ImagesLeaf = _require(_dependencyMap[7], "./ImagesLeaf");
-
-  var _ImagesLeaf2 = _interopRequireDefault(_ImagesLeaf);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -61619,7 +61615,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               navigator: navigator,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 38
+                lineNumber: 36
               }
             });
 
@@ -61630,7 +61626,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               navigator: navigator,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 40
+                lineNumber: 38
               }
             });
 
@@ -61639,16 +61635,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
               navigator: navigator,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 43
-              }
-            });
-
-          case "iconChoice":
-            return _react3.default.createElement(_ImagesLeaf2.default, {
-              navigator: navigator,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 45
+                lineNumber: 41
               }
             });
         }
@@ -61664,7 +61651,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
           renderScene: this.renderScene,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 48
           }
         });
       }
@@ -61694,7 +61681,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }(_react2.Component));
 
   exports.default = App;
-},493,[118,130,12,494,523,524,525,530],"App.js");
+},493,[118,130,12,494,523,524,525],"App.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   var Navigator = _require(_dependencyMap[0], './Navigator');
 
@@ -72346,6 +72333,10 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _reactNative = _require(_dependencyMap[2], "react-native");
 
+  var _reactNativeImageCropPicker = _require(_dependencyMap[3], "react-native-image-crop-picker");
+
+  var _reactNativeImageCropPicker2 = _interopRequireDefault(_reactNativeImageCropPicker);
+
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -72376,12 +72367,6 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   var sWidth = _reactNative.Dimensions.get('window').width;
 
   var sHeight = _reactNative.Dimensions.get('window').height;
-
-  var fetchParams = {
-    first: 6,
-    groupTypes: 'All',
-    assetType: 'Photos'
-  };
 
   var RegisterLeaf = _wrapComponent("RegisterLeaf")(function (_Component) {
     _inherits(RegisterLeaf, _Component);
@@ -72416,8 +72401,13 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       key: "iconClicked",
       value: function iconClicked() {
         console.log('头像点击了');
-        this.props.navigator.push({
-          name: "iconChoice"
+
+        _reactNativeImageCropPicker2.default.openPicker({
+          width: 300,
+          height: 400,
+          cropping: true
+        }).then(function (image) {
+          console.log(image);
         });
       }
     }, {
@@ -72429,17 +72419,17 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             style: styles.container,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 75
+              lineNumber: 58
             }
           },
           _react3.default.createElement(
             _reactNative.ImageBackground,
             {
-              source: _require(_dependencyMap[3], './source/images/bg.png'),
+              source: _require(_dependencyMap[4], './source/images/bg.png'),
               style: styles.BGImage,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 76
+                lineNumber: 59
               }
             },
             _react3.default.createElement(
@@ -72450,7 +72440,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                 style: styles.iconImage,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 77
+                  lineNumber: 60
                 }
               },
               _react3.default.createElement(_reactNative.Image, {
@@ -72466,7 +72456,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                 },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 78
+                  lineNumber: 61
                 }
               })
             ),
@@ -72482,7 +72472,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                 },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 80
+                  lineNumber: 63
                 }
               },
               _react3.default.createElement(
@@ -72498,18 +72488,18 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                   },
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 81
+                    lineNumber: 64
                   }
                 },
                 _react3.default.createElement(_reactNative.Image, {
-                  source: _require(_dependencyMap[4], './source/images/icon_我的2.png'),
+                  source: _require(_dependencyMap[5], './source/images/icon_我的2.png'),
                   style: {
                     width: 21,
                     height: 21
                   },
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 82
+                    lineNumber: 65
                   }
                 }),
                 _react3.default.createElement(_reactNative.TextInput, {
@@ -72525,7 +72515,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                   },
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 83
+                    lineNumber: 66
                   }
                 })
               ),
@@ -72542,18 +72532,18 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                   },
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 85
+                    lineNumber: 68
                   }
                 },
                 _react3.default.createElement(_reactNative.Image, {
-                  source: _require(_dependencyMap[5], './source/images/btn_查看游记.png'),
+                  source: _require(_dependencyMap[6], './source/images/btn_查看游记.png'),
                   style: {
                     width: 21,
                     height: 21
                   },
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 86
+                    lineNumber: 69
                   }
                 }),
                 _react3.default.createElement(_reactNative.TextInput, {
@@ -72569,7 +72559,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                   },
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 87
+                    lineNumber: 70
                   }
                 })
               )
@@ -72585,13 +72575,13 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                 },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 90
+                  lineNumber: 73
                 }
               },
               _react3.default.createElement(
                 _reactNative.ImageBackground,
                 {
-                  source: _require(_dependencyMap[6], './source/images/btn_注册.png'),
+                  source: _require(_dependencyMap[7], './source/images/btn_注册.png'),
                   style: {
                     width: 100,
                     height: 30,
@@ -72600,7 +72590,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                   },
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 91
+                    lineNumber: 74
                   }
                 },
                 _react3.default.createElement(
@@ -72608,7 +72598,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                   {
                     __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 92
+                      lineNumber: 75
                     }
                   },
                   "\u6CE8\u518C"
@@ -72641,7 +72631,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       borderRadius: sWidth * 0.25
     }
   });
-},525,[118,130,12,526,527,528,529],"RegisterLeaf.js");
+},525,[118,130,12,532,526,527,528,529],"RegisterLeaf.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -72695,80 +72685,16 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     value: true
   });
 
-  var _react2 = _require(_dependencyMap[0], "react");
+  var _react = _require(_dependencyMap[0], "react");
 
-  var _react3 = _interopRequireDefault(_react2);
+  var _react2 = _interopRequireDefault(_react);
 
-  var _index = _require(_dependencyMap[1], "./node_modules/react-transform-hmr/lib/index.js");
-
-  var _index2 = _interopRequireDefault(_index);
-
-  var _jsxFileName = "/Users/liuhang/Documents/RN_demo/learnRN/ImagesLeaf.js";
-
-  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-  var _reactNative = _require(_dependencyMap[2], "react-native");
+  var _reactNative = _require(_dependencyMap[1], "react-native");
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-  var _components = {
-    ImagesLeaf: {
-      displayName: "ImagesLeaf"
-    }
-  };
-
-  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/liuhang/Documents/RN_demo/learnRN/ImagesLeaf.js",
-    components: _components,
-    locals: [module],
-    imports: [_react3.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var ImagesLeaf = _wrapComponent("ImagesLeaf")(function (_Component) {
-    _inherits(ImagesLeaf, _Component);
-
-    function ImagesLeaf() {
-      _classCallCheck(this, ImagesLeaf);
-
-      return _possibleConstructorReturn(this, (ImagesLeaf.__proto__ || Object.getPrototypeOf(ImagesLeaf)).apply(this, arguments));
-    }
-
-    _createClass(ImagesLeaf, [{
-      key: "componentDidMount",
-      value: function componentDidMount() {}
-    }, {
-      key: "render",
-      value: function render() {
-        return _react3.default.createElement(_reactNative.View, {
-          style: {
-            flex: 1,
-            backgroundColor: 'gray'
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 17
-          }
-        });
-      }
-    }]);
-
-    return ImagesLeaf;
-  }(_react2.Component));
-
-  exports.default = ImagesLeaf;
-},530,[118,130,12],"ImagesLeaf.js");
+  exports.default = _reactNative.NativeModules.ImageCropPicker;
+},532,[118,12],"node_modules/react-native-image-crop-picker/index.js");
 require(52);
 require(11);
 //# sourceMappingURL=index.map

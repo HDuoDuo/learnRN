@@ -10,15 +10,10 @@ import {
   TouchableHighlight,
  } from 'react-native';
 
+ import ImagePicker from 'react-native-image-crop-picker'; 
+
  let sWidth = Dimensions.get('window').width;
  let sHeight = Dimensions.get('window').height;
-
-//照片获取参数
-var fetchParams = {
-  first: 6,
-  groupTypes: 'All',
-  assetType: 'Photos'
-}
  
 
 export default class RegisterLeaf extends Component<props> {
@@ -48,25 +43,13 @@ export default class RegisterLeaf extends Component<props> {
    // 头像点击
   iconClicked() {
     console.log('头像点击了');
-    this.props.navigator.push({
-      name: "iconChoice",
+    ImagePicker.openPicker({
+      width: 300,
+      height: 400,
+      cropping: true
+    }).then(image => {
+      console.log(image);
     });
-
-    // var _that = this;
-    //   //获取照片
-    //   var promise = CameraRoll.getPhotos(fetchParams)
-    //   promise.then(function(data){
-    //           var edges = data.edges;
-    //           var photos = [];
-    //           for (var i in edges) {
-    //               photos.push(edges[i].node.image.uri);
-    //           };
-    //           _that.setState({
-    //               photoes:photos[1]
-    //           });
-    //   },function(err){
-    //       alert('获取照片失败！');
-    //   });
   }
 
 
