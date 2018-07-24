@@ -20,7 +20,7 @@ export default class RegisterLeaf extends Component<props> {
   constructor(props) {
     super(props)
     this.state = {
-       photoes: ''
+       iconImage: require('./source/images/icon.png')
     };
 
   };
@@ -47,8 +47,10 @@ export default class RegisterLeaf extends Component<props> {
       width: 300,
       height: 400,
       cropping: true
-    }).then(image => {
-      console.log(image);
+    }).then(image => {      
+      this.setState({        
+        iconImage: {uri: image['path']},
+      });
     });
   }
 
@@ -58,7 +60,7 @@ export default class RegisterLeaf extends Component<props> {
     <View style={styles.container}>
     <ImageBackground source={require('./source/images/bg.png')} style={styles.BGImage}>
       <TouchableHighlight  underlayColor='gray' onPress={this.iconClicked.bind(this)} style={styles.iconImage}>
-        <Image source={[{uri: this.state.photoes},{uri: 'http://localhost/PHPDemo/source/images/牛皮纸bg@2x.png'}]} style={{width: sWidth *0.5, height: sWidth *0.5, borderRadius: sWidth *0.25}}/>
+        <Image source={this.state.iconImage} style={{width: sWidth *0.5, height: sWidth *0.5, borderRadius: sWidth *0.25}}/>
       </TouchableHighlight>
       <View style={{backgroundColor: 'green', width: sWidth, height: 190, marginTop: 60, alignItems: 'center'}}>
         <View style={{backgroundColor: 'yellow', width: sWidth*0.8, height: 50, marginTop: 30, alignItems: 'center',flexDirection: 'row'}}>
