@@ -72337,6 +72337,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _reactNativeImageCropPicker2 = _interopRequireDefault(_reactNativeImageCropPicker);
 
+  var _checkData = _require(_dependencyMap[4], "./tools/checkData");
+
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -72368,6 +72370,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var sHeight = _reactNative.Dimensions.get('window').height;
 
+  var phoneNumber = '';
+
   var RegisterLeaf = _wrapComponent("RegisterLeaf")(function (_Component) {
     _inherits(RegisterLeaf, _Component);
 
@@ -72377,7 +72381,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       var _this = _possibleConstructorReturn(this, (RegisterLeaf.__proto__ || Object.getPrototypeOf(RegisterLeaf)).call(this, props));
 
       _this.state = {
-        iconImage: _require(_dependencyMap[4], './source/images/icon.png')
+        iconImage: _require(_dependencyMap[5], './source/images/icon.png')
       };
       return _this;
     }
@@ -72386,11 +72390,13 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       key: "registerButtonClicked",
       value: function registerButtonClicked() {
         console.log('ah');
+        (0, _checkData.checkRegisterData)(phoneNumber);
       }
     }, {
       key: "userChanged",
       value: function userChanged(text) {
         console.log(text);
+        phoneNumber = text;
       }
     }, {
       key: "PWcahnged",
@@ -72425,17 +72431,17 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             style: styles.container,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 60
+              lineNumber: 65
             }
           },
           _react3.default.createElement(
             _reactNative.ImageBackground,
             {
-              source: _require(_dependencyMap[5], './source/images/bg.png'),
+              source: _require(_dependencyMap[6], './source/images/bg.png'),
               style: styles.BGImage,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 61
+                lineNumber: 66
               }
             },
             _react3.default.createElement(
@@ -72446,7 +72452,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                 style: styles.iconImage,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 62
+                  lineNumber: 67
                 }
               },
               _react3.default.createElement(_reactNative.Image, {
@@ -72458,7 +72464,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                 },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 63
+                  lineNumber: 68
                 }
               })
             ),
@@ -72474,7 +72480,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                 },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 65
+                  lineNumber: 70
                 }
               },
               _react3.default.createElement(
@@ -72490,21 +72496,22 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                   },
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 66
+                    lineNumber: 71
                   }
                 },
                 _react3.default.createElement(_reactNative.Image, {
-                  source: _require(_dependencyMap[6], './source/images/icon_我的2.png'),
+                  source: _require(_dependencyMap[7], './source/images/icon_我的2.png'),
                   style: {
                     width: 21,
                     height: 21
                   },
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 67
+                    lineNumber: 72
                   }
                 }),
                 _react3.default.createElement(_reactNative.TextInput, {
+                  keyboardType: "numeric",
                   onChangeText: this.userChanged,
                   placeholder: "\u8BF7\u8F93\u5165\u624B\u673A\u53F7\u7801",
                   borderBottomColor: "gray",
@@ -72517,7 +72524,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                   },
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 68
+                    lineNumber: 73
                   }
                 })
               ),
@@ -72534,18 +72541,18 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                   },
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 70
+                    lineNumber: 75
                   }
                 },
                 _react3.default.createElement(_reactNative.Image, {
-                  source: _require(_dependencyMap[7], './source/images/btn_查看游记.png'),
+                  source: _require(_dependencyMap[8], './source/images/btn_查看游记.png'),
                   style: {
                     width: 21,
                     height: 21
                   },
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 71
+                    lineNumber: 76
                   }
                 }),
                 _react3.default.createElement(_reactNative.TextInput, {
@@ -72561,7 +72568,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                   },
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 72
+                    lineNumber: 77
                   }
                 })
               )
@@ -72569,7 +72576,6 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             _react3.default.createElement(
               _reactNative.TouchableHighlight,
               {
-                title: "\u6CE8\u518C",
                 onPress: this.registerButtonClicked,
                 style: {
                   marginTop: 30,
@@ -72577,13 +72583,13 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                 },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 75
+                  lineNumber: 80
                 }
               },
               _react3.default.createElement(
                 _reactNative.ImageBackground,
                 {
-                  source: _require(_dependencyMap[8], './source/images/btn_注册.png'),
+                  source: _require(_dependencyMap[9], './source/images/btn_注册.png'),
                   style: {
                     width: 100,
                     height: 30,
@@ -72592,7 +72598,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                   },
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 76
+                    lineNumber: 81
                   }
                 },
                 _react3.default.createElement(
@@ -72600,7 +72606,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                   {
                     __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 77
+                      lineNumber: 82
                     }
                   },
                   "\u6CE8\u518C"
@@ -72633,55 +72639,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       borderRadius: sWidth * 0.25
     }
   });
-},525,[118,130,12,532,533,526,527,528,529],"RegisterLeaf.js");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/source/images",
-    "width": 320,
-    "height": 423,
-    "scales": [1, 2],
-    "hash": "899eddf3c6bf3390f71c2985dba9b69b",
-    "name": "bg",
-    "type": "png"
-  });
-},526,[326],"source/images/bg.png");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/source/images",
-    "width": 27,
-    "height": 27,
-    "scales": [1, 2],
-    "hash": "91d2d9bd8c03f940d62e304082330df3",
-    "name": "icon_我的2",
-    "type": "png"
-  });
-},527,[326],"source/images/icon_我的2.png");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/source/images",
-    "width": 25,
-    "height": 25,
-    "scales": [1, 2],
-    "hash": "5991e68288f7df7386258ddfc8508a80",
-    "name": "btn_查看游记",
-    "type": "png"
-  });
-},528,[326],"source/images/btn_查看游记.png");
-__d(function (global, _require, module, exports, _dependencyMap) {
-  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/source/images",
-    "width": 138,
-    "height": 44,
-    "scales": [1, 2],
-    "hash": "059b51d2e8878ae42511004a1c42e934",
-    "name": "btn_注册",
-    "type": "png"
-  });
-},529,[326],"source/images/btn_注册.png");
+},525,[118,130,12,526,533,527,528,529,530,531],"RegisterLeaf.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -72696,7 +72654,31 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   exports.default = _reactNative.NativeModules.ImageCropPicker;
-},532,[118,12],"node_modules/react-native-image-crop-picker/index.js");
+},526,[118,12],"node_modules/react-native-image-crop-picker/index.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.checkRegisterData = checkRegisterData;
+
+    function checkRegisterData(phoneNum) {
+        if (phoneNum.length == 0) {
+            alert('请输入手机号码！');
+            return false;
+        }
+
+        if (phoneNum.length != 11) {
+            alert('请输入有效的手机号！');
+            return false;
+        }
+
+        var PATTERN_MATCH = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
+
+        if (PATTERN_MATCH.test(phoneNum)) {
+            return true;
+        }
+    }
+},533,[],"tools/checkData.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -72708,7 +72690,55 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     "name": "icon",
     "type": "png"
   });
-},533,[326],"source/images/icon.png");
+},527,[326],"source/images/icon.png");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/source/images",
+    "width": 320,
+    "height": 423,
+    "scales": [1, 2],
+    "hash": "899eddf3c6bf3390f71c2985dba9b69b",
+    "name": "bg",
+    "type": "png"
+  });
+},528,[326],"source/images/bg.png");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/source/images",
+    "width": 27,
+    "height": 27,
+    "scales": [1, 2],
+    "hash": "91d2d9bd8c03f940d62e304082330df3",
+    "name": "icon_我的2",
+    "type": "png"
+  });
+},529,[326],"source/images/icon_我的2.png");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/source/images",
+    "width": 25,
+    "height": 25,
+    "scales": [1, 2],
+    "hash": "5991e68288f7df7386258ddfc8508a80",
+    "name": "btn_查看游记",
+    "type": "png"
+  });
+},530,[326],"source/images/btn_查看游记.png");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/source/images",
+    "width": 138,
+    "height": 44,
+    "scales": [1, 2],
+    "hash": "059b51d2e8878ae42511004a1c42e934",
+    "name": "btn_注册",
+    "type": "png"
+  });
+},531,[326],"source/images/btn_注册.png");
 require(52);
 require(11);
 //# sourceMappingURL=index.map

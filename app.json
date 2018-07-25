@@ -1,4 +1,5 @@
 {
   "name": "learnRN",
-  "displayName": "learnRN"
+  "displayName": "learnRN",
+  "localhost": "127.0.0.1"
 }

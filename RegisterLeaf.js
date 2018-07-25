@@ -10,15 +10,16 @@ import {
   TouchableHighlight,
  } from 'react-native';
 
- import ImagePicker from 'react-native-image-crop-picker'; 
-
+import ImagePicker from 'react-native-image-crop-picker'; 
+import { checkRegisterData } from './tools/checkData';
+ 
  let sWidth = Dimensions.get('window').width;
  let sHeight = Dimensions.get('window').height;
+ var phoneNumber='';
  
-
 export default class RegisterLeaf extends Component<props> {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
        iconImage: require('./source/images/icon.png')
     };
@@ -28,16 +29,18 @@ export default class RegisterLeaf extends Component<props> {
    //点击注册按钮
   registerButtonClicked () {
     console.log('ah');  
+    checkRegisterData(phoneNumber);
+    
   }
    //账号内容改变
   userChanged(text) {
     console.log(text);
+    phoneNumber=text;
     
   }
    //密码改变
   PWcahnged(text) {
     console.log(text);
-    
   }
 
    // 头像点击
@@ -50,8 +53,10 @@ export default class RegisterLeaf extends Component<props> {
     }).then(image => {      
       this.setState({        
         iconImage: {uri: image['path']},
+        // 上传至服务器
       });
     });
+    
   }
 
 
@@ -65,16 +70,16 @@ export default class RegisterLeaf extends Component<props> {
       <View style={{backgroundColor: 'green', width: sWidth, height: 190, marginTop: 60, alignItems: 'center'}}>
         <View style={{backgroundColor: 'yellow', width: sWidth*0.8, height: 50, marginTop: 30, alignItems: 'center',flexDirection: 'row'}}>
           <Image source={require('./source/images/icon_我的2.png')} style={{width: 21, height: 21}}/>
-          <TextInput  onChangeText={this.userChanged} placeholder='请输入手机号码' borderBottomColor='gray'  style={{marginLeft: 8,  marginRight: 12,borderBottomWidth: 1,flex: 1,fontSize: 18}}></TextInput>
+          <TextInput keyboardType="numeric" onChangeText={this.userChanged} placeholder='请输入手机号码' borderBottomColor='gray'  style={{marginLeft: 8,  marginRight: 12,borderBottomWidth: 1,flex: 1,fontSize: 18}}></TextInput>
         </View>
         <View style={{backgroundColor: 'yellow', width: sWidth*0.8, height: 50,marginTop: 30,alignItems: 'center',flexDirection: 'row'}}>
           <Image source={require('./source/images/btn_查看游记.png')} style={{width: 21, height: 21}}/>
           <TextInput onChangeText={this.PWcahnged} placeholder='请输入密码' borderBottomColor='gray'  style={{marginLeft: 8,  marginRight: 12,borderBottomWidth: 1,flex: 1,fontSize: 18}}></TextInput>
         </View>
       </View>
-      <TouchableHighlight title='注册' onPress={this.registerButtonClicked} style={{marginTop: 30,borderRadius: 10}}>
+      <TouchableHighlight onPress={this.registerButtonClicked} style={{marginTop: 30,borderRadius: 10}}>
           <ImageBackground source={require('./source/images/btn_注册.png')} style={{width: 100,height: 30, alignItems: 'center', justifyContent: 'center',}}>
-            <Text>注册</Text>
+           <Text>注册</Text>
           </ImageBackground>
       </TouchableHighlight>
     </ImageBackground>
